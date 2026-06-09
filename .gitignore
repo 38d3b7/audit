@@ -1,0 +1,17 @@
+.DS_Store
+*.swp
+*.swo
+*~
+
+audits/
+findings-*.md
+AUDIT-REPORT.md
+*.local.md
+
+node_modules/
+.env
+.env.*
+.vscode/
+.idea/
+
+*.log

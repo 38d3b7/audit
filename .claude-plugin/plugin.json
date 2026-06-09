@@ -1,0 +1,49 @@
+{
+  "name": "audit",
+  "version": "1.2.0",
+  "description": "Deep EVM smart contract security audit skills — 24 specialized domains, 650+ non-obvious checklist items. Runs parallel specialist sub-agents against domain checklists, synthesizes findings, files GitHub issues.",
+  "author": {
+    "name": "FED",
+    "url": "https://github.com/38d3b7"
+  },
+  "homepage": "https://github.com/38d3b7/audit",
+  "repository": "https://github.com/38d3b7/audit",
+  "license": "MIT",
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "security",
+    "audit",
+    "smart-contracts",
+    "evm",
+    "defi",
+    "web3"
+  ],
+  "skills": [
+    "./evm-audit-master",
+    "./evm-audit-general",
+    "./evm-audit-precision-math",
+    "./evm-audit-reentrancy",
+    "./evm-audit-access-control",
+    "./evm-audit-erc20",
+    "./evm-audit-defi-amm",
+    "./evm-audit-defi-lending",
+    "./evm-audit-defi-staking",
+    "./evm-audit-erc4626",
+    "./evm-audit-erc4337",
+    "./evm-audit-eip7702",
+    "./evm-audit-modular-accounts",
+    "./evm-audit-bridges",
+    "./evm-audit-intents",
+    "./evm-audit-proxies",
+    "./evm-audit-signatures",
+    "./evm-audit-governance",
+    "./evm-audit-oracles",
+    "./evm-audit-assembly",
+    "./evm-audit-chain-specific",
+    "./evm-audit-flashloans",
+    "./evm-audit-mev",
+    "./evm-audit-erc721",
+    "./evm-audit-dos"
+  ]
+}
