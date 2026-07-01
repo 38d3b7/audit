@@ -2,6 +2,15 @@
 
 All notable changes to this audit skill suite. Follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) loosely; semantic versioning where: **major** = breaking layout/format change, **minor** = new domain skill, **patch** = checklist content updates within existing skills.
 
+## [1.4.1] — 2026-07-01
+
+### Changed
+
+- **`evm-audit-synthesis/SKILL.md`** — Sync synthesis step 1 to header-first reading (activates Phase 4 fan-in saving).
+- **Plugin manifest** — v1.4.1.
+
+---
+
 ## [1.4.0] — 2026-07-01
 
 ### Changed

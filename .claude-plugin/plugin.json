@@ -1,6 +1,6 @@
 {
   "name": "audit",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Deep EVM smart contract security audit skills — 26 discovery domains + synthesis verification gates, 700+ non-obvious checklist items. Runs parallel specialist sub-agents against domain checklists, synthesizes findings, files GitHub issues.",
   "author": {
     "name": "FED",
