@@ -1,7 +1,7 @@
 {
   "name": "audit",
-  "version": "1.2.0",
-  "description": "Deep EVM smart contract security audit skills — 24 specialized domains, 650+ non-obvious checklist items. Runs parallel specialist sub-agents against domain checklists, synthesizes findings, files GitHub issues.",
+  "version": "1.4.0",
+  "description": "Deep EVM smart contract security audit skills — 26 discovery domains + synthesis verification gates, 700+ non-obvious checklist items. Runs parallel specialist sub-agents against domain checklists, synthesizes findings, files GitHub issues.",
   "author": {
     "name": "FED",
     "url": "https://github.com/38d3b7"
@@ -43,7 +43,9 @@
     "./evm-audit-chain-specific",
     "./evm-audit-flashloans",
     "./evm-audit-mev",
+    "./evm-audit-game-theory",
     "./evm-audit-erc721",
-    "./evm-audit-dos"
+    "./evm-audit-dos",
+    "./evm-audit-synthesis"
   ]
 }

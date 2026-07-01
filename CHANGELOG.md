@@ -2,6 +2,37 @@
 
 All notable changes to this audit skill suite. Follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) loosely; semantic versioning where: **major** = breaking layout/format change, **minor** = new domain skill, **patch** = checklist content updates within existing skills.
 
+## [1.4.0] — 2026-07-01
+
+### Changed
+
+- **`evm-audit-master/SKILL.md`** — Context-scoped sub-agents + summary-first synthesis for token efficiency (Phase 3 scoped source packages + required findings-header-shape bullet; Phase 4 header-first fan-in).
+- **Plugin manifest** — v1.4.0.
+
+---
+
+## [1.3.0] — 2026-06-09
+
+Chain Shield port. Adapted portable knowledge from [chain-shield/ai-agent-audit](https://github.com/chain-shield/ai-agent-audit) (MIT, `develop` branch).
+
+### Added
+
+- **`evm-audit-synthesis/`** — Phase 4 only. 13 verification gates adapted from Chain Shield VERIFY_CHECKLIST.md: pre-gate sanity (hallucination filter), scope, user-error, impact/likelihood matrix, governance-risk, speculation, documentation-only, by-design, safeguards, cross-cutting synthesis checks.
+- **`evm-audit-game-theory/`** — ~24 items: keeper/liveness economics, queue-order MEV, griefing economics, governance capture, actor-oriented review, six-class invariant hunting (Arithmetic, Balance, Permission, Referential, State Machine, Temporal). Patterns from Chain Shield `threat_models/patterns.rs`.
+- **Cherry-picked Chain Shield patterns** into existing skills: governance (+2), general (+3), oracles (+2), proxies (+1), intents (+2), defi-lending (+2).
+- **README "Optional Automation Layer"** — documents Chain Shield as complementary execution-layer tool.
+
+### Changed
+
+- **`evm-audit-master/SKILL.md`** — 27-skill index; Phase 4 now requires dedicated synthesis agent with `evm-audit-synthesis`; routing table adds game-theory.
+- **Plugin manifest** — v1.3.0, registers synthesis + game-theory skills.
+
+### Attribution
+
+- Chain Shield (MIT): VERIFY_CHECKLIST.md → `evm-audit-synthesis/references/verify-gates.md`; game-theory patterns → `evm-audit-game-theory/references/checklist.md`.
+
+---
+
 ## [1.2.0] — 2026-06-09
 
 Team-vendored release. Forked from `austintgriffith/evm-audit-skills` v1.0.0 (Feb-2026 baseline), extended for in-house team use.

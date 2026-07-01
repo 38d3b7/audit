@@ -4,15 +4,15 @@
     "name": "FED"
   },
   "metadata": {
-    "version": "1.2.0",
-    "description": "Deep EVM smart contract security audit skills — 24 specialized domains, 650+ non-obvious checklist items."
+    "version": "1.4.0",
+    "description": "Deep EVM smart contract security audit skills — 26 discovery domains + synthesis verification gates, 700+ non-obvious checklist items."
   },
   "plugins": [
     {
       "name": "audit",
       "source": "./",
-      "version": "1.2.0",
-      "description": "Deep EVM smart contract security audit skills — 24 specialized domains, 650+ non-obvious checklist items.",
+      "version": "1.4.0",
+      "description": "Deep EVM smart contract security audit skills — 26 discovery domains + synthesis verification gates, 700+ non-obvious checklist items.",
       "author": {
         "name": "FED"
       }

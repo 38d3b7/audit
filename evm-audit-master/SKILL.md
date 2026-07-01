@@ -4,7 +4,7 @@ description: Master index for EVM smart contract security audit skills. Load thi
 ---
 # EVM Smart Contract Security Audit — Master Index
 
-`v1.2.0` — team-vendored, extends the [`austintgriffith/evm-audit-skills`](https://github.com/austintgriffith/evm-audit-skills) Feb-2026 baseline.
+`v1.3.0` — team-vendored, extends the [`austintgriffith/evm-audit-skills`](https://github.com/austintgriffith/evm-audit-skills) Feb-2026 baseline. v1.3.0 adds Chain Shield verification gates and game-theory domain.
 
 ## How To Use
 1. **Always load this skill first** for any EVM smart contract audit
@@ -12,37 +12,39 @@ description: Master index for EVM smart contract security audit skills. Load thi
 3. Use the routing table below to load relevant specialized skills
 4. Walk through each loaded skill's checklist systematically
 
-## All 25 Skills — Definitive Index
+## All 27 Skills — Definitive Index
 
 | # | Skill | Description | Items |
 |---|-------|-------------|-------|
 | 1 | **evm-audit-master** | This file. Routing table, methodology, source attribution. Load first. | — |
-| 2 | **evm-audit-general** | Cross-cutting issues: storage pointers, struct deletion, mixed accounting, merkle proofs, msg.value in loops, try/catch, delegatecall, upgrades, downcasting, rebasing tokens, fee-on-transfer, ERC4626 inflation attack | 46+ |
+| 2 | **evm-audit-general** | Cross-cutting issues: storage pointers, struct deletion, mixed accounting, merkle proofs, msg.value in loops, try/catch, delegatecall, upgrades, downcasting, rebasing tokens, fee-on-transfer, ERC4626 inflation attack | 49+ |
 | 3 | **evm-audit-precision-math** | Division-before-multiplication, rounding to zero, precision scaling mismatches, downcast overflow, rounding direction (protocol vs user), decimal assumption errors | 23+ |
-| 4 | **evm-audit-reentrancy** *(new)* | Read-only reentrancy (price/share view mid-callback), cross-function & cross-contract reentry, EIP-1153 transient-storage lock pitfalls, ERC721/1155/777 callback reentry, view-function reentrancy across protocols | 28+ |
+| 4 | **evm-audit-reentrancy** | Read-only reentrancy (price/share view mid-callback), cross-function & cross-contract reentry, EIP-1153 transient-storage lock pitfalls, ERC721/1155/777 callback reentry, view-function reentrancy across protocols | 28+ |
 | 5 | **evm-audit-access-control** | Access control patterns: missing modifiers, 2-step ownership, role-based permissions, emergency pause, time delays, admin overpowers | 15+ |
 | 6 | **evm-audit-erc20** | Fee-on-transfer, rebasing, ERC777 hooks, approve race conditions, zero-transfer reverts, pausable tokens, deny lists (USDC), deflationary/inflationary tokens, multiple-address tokens | 27+ |
 | 7 | **evm-audit-defi-amm** | AMM/DEX slippage attacks, CLM vulnerabilities (TWAP bypass, sandwich via owner functions, stuck tokens, stale approvals, retrospective fees), UniswapV3/V4 hooks, fee tier issues | 30+ |
-| 8 | **evm-audit-defi-lending** | Liquidation vulnerabilities (20+ patterns), lending/borrowing attacks, bad debt handling, partial liquidation bypasses, front-run prevention, collateral hiding, insurance fund edge cases, non-18 decimal failures | 33+ |
+| 8 | **evm-audit-defi-lending** | Liquidation vulnerabilities (20+ patterns), lending/borrowing attacks, bad debt handling, partial liquidation bypasses, front-run prevention, collateral hiding, insurance fund edge cases, non-18 decimal failures | 35+ |
 | 9 | **evm-audit-defi-staking** | Liquid staking, restaking, EigenLayer integration, stakedButUnverified accounting, Beacon Chain proof verification (Deneb), validator front-running, cooldown exploitation, reward calculation precision | 30+ |
 | 10 | **evm-audit-erc4626** | Share/asset conversion, inflation attack, virtual shares, deposit/withdraw rounding, first depositor attack, multi-step operations, 85+ patterns from Dacian's ERC4626 primer | 42+ |
 | 11 | **evm-audit-erc4337** | Account abstraction, smart wallet security, paymaster attacks, session key exploits, UserOperation validation, bundler trust assumptions, gas griefing | 18+ |
-| 12 | **evm-audit-eip7702** *(new)* | EOA delegation under Pectra: set-code authorization replay, re-delegation/sweeper attacks, storage slot collisions with delegated code, broken `tx.origin == msg.sender`, init-on-every-tx, phishing via delegation, relayer trust | 22+ |
-| 13 | **evm-audit-modular-accounts** *(new)* | ERC-7579 / ERC-6900 / ERC-7484 modular smart accounts: malicious validator/executor modules, hook ordering, install/uninstall authorization, registry trust, fallback-handler hijack, module init data, signature module bypasses | 20+ |
+| 12 | **evm-audit-eip7702** | EOA delegation under Pectra: set-code authorization replay, re-delegation/sweeper attacks, storage slot collisions with delegated code, broken `tx.origin == msg.sender`, init-on-every-tx, phishing via delegation, relayer trust | 22+ |
+| 13 | **evm-audit-modular-accounts** | ERC-7579 / ERC-6900 / ERC-7484 modular smart accounts: malicious validator/executor modules, hook ordering, install/uninstall authorization, registry trust, fallback-handler hijack, module init data, signature module bypasses | 20+ |
 | 14 | **evm-audit-bridges** | Cross-chain bridge security, LayerZero V2, CCIP, Wormhole, Across, message replay, finality assumptions, relayer trust, adapter pattern issues | 32+ |
-| 15 | **evm-audit-intents** *(new)* | ERC-7683 cross-chain intents: solver/filler trust, settlement replay, origin/destination mismatch, fill-deadline assumptions, partial-fill accounting, oracle-based settlement spoofing, gas-griefing solvers | 18+ |
-| 16 | **evm-audit-proxies** | UUPS deep dive (uninitialized implementation, delegatecall to selfdestruct, broken upgrade chain, authorization schema changes), Transparent proxy, Beacon, Diamond, storage collision, immutable variable loss | 18+ |
+| 15 | **evm-audit-intents** | ERC-7683 cross-chain intents: solver/filler trust, settlement replay, origin/destination mismatch, fill-deadline assumptions, partial-fill accounting, oracle-based settlement spoofing, gas-griefing solvers | 20+ |
+| 16 | **evm-audit-proxies** | UUPS deep dive (uninitialized implementation, delegatecall to selfdestruct, broken upgrade chain, authorization schema changes), Transparent proxy, Beacon, Diamond, storage collision, immutable variable loss | 19+ |
 | 17 | **evm-audit-signatures** | Signature replay (missing nonce, cross-chain, missing parameter, no expiration), ecrecover return check, signature malleability, EIP-712 conformance, ECDSA library version requirements | 19+ |
-| 18 | **evm-audit-governance** | DAO attacks (flash-loan + delegation bypass, voting power destruction, totalPower manipulation, snapshot staleness, quorum impossibility, treasury delegation abuse, restriction bypass, token recycling, proposal deadlines, pre-mint exploitation), proposal execution ordering, fake proposals via CREATE2, multi-sig quorum failure | 23+ |
-| 19 | **evm-audit-oracles** | Chainlink integration (stale prices, L2 sequencer, per-feed heartbeats, decimal assumptions, wrong addresses, front-running, unhandled reverts, depeg detection, minAnswer/maxAnswer), Sigma Prime patterns (spot price manipulation, homegrown oracle risks, gas congestion, hardcoded pegs, TWAP limitations) | 29+ |
+| 18 | **evm-audit-governance** | DAO attacks (flash-loan + delegation bypass, voting power destruction, totalPower manipulation, snapshot staleness, quorum impossibility, treasury delegation abuse, restriction bypass, token recycling, proposal deadlines, pre-mint exploitation), proposal execution ordering, fake proposals via CREATE2, multi-sig quorum failure | 25+ |
+| 19 | **evm-audit-oracles** | Chainlink integration (stale prices, L2 sequencer, per-feed heartbeats, decimal assumptions, wrong addresses, front-running, unhandled reverts, depeg detection, minAnswer/maxAnswer), Sigma Prime patterns (spot price manipulation, homegrown oracle risks, gas congestion, hardcoded pegs, TWAP limitations) | 31+ |
 | 20 | **evm-audit-assembly** | Inline assembly memory corruption (external call overwrites, stale FMPA assumptions, insufficient allocation), call to non-existent contracts, overflow/underflow without protection, uint128 overflow evading 256-bit detection | 27+ |
 | 21 | **evm-audit-chain-specific** | L2/alt-chain quirks — Arbitrum, Optimism, zkSync, Blast, BSC, Polygon. Sequencer downtime, different opcodes, gas pricing differences, precompile availability, block time assumptions | 29+ |
 | 22 | **evm-audit-flashloans** | Flash loan attack patterns, oracle manipulation via flash loans, governance flash loan voting, flash mint issues, composability risks | 15+ |
-| 23 | **evm-audit-mev** *(new)* | Sandwich attacks, JIT liquidity, missing `deadline`/`minOut`, private-mempool assumptions, backrunnable state, NFT-mint frontrunning, commit-reveal gaps, atomic-arb griefing, builder/bundler trust | 22+ |
-| 24 | **evm-audit-erc721** | NFT-specific issues: onERC721Received callbacks, enumeration DoS, royalty enforcement, metadata manipulation, batch mint edge cases | 20+ |
-| 25 | **evm-audit-dos** | Denial of service patterns: unbounded loops, block gas limit, self-destruct force-send, storage deletion costs, griefing via revert, return data bombs | 18+ |
+| 23 | **evm-audit-mev** | Sandwich attacks, JIT liquidity, missing `deadline`/`minOut`, private-mempool assumptions, backrunnable state, NFT-mint frontrunning, commit-reveal gaps, atomic-arb griefing, builder/bundler trust | 22+ |
+| 24 | **evm-audit-game-theory** *(new v1.3.0)* | Incentive misalignment, keeper economics, rational-actor griefing, queue-order MEV, reward free-riders, cross-role collusion, six-class invariant hunting | 24+ |
+| 25 | **evm-audit-erc721** | NFT-specific issues: onERC721Received callbacks, enumeration DoS, royalty enforcement, metadata manipulation, batch mint edge cases | 20+ |
+| 26 | **evm-audit-dos** | Denial of service patterns: unbounded loops, block gas limit, self-destruct force-send, storage deletion costs, griefing via revert, return data bombs | 18+ |
+| 27 | **evm-audit-synthesis** *(new v1.3.0)* | **Phase 4 only.** 13 verification gates for false-positive triage, severity calibration, and contest-grade finding validation before writing AUDIT-REPORT.md | 13 gates |
 
-**Total: 650+ checklist items across 24 specialized skills + 1 master index**
+**Total: 700+ checklist items across 26 discovery skills + 1 synthesis skill + 1 master index**
 
 ## Routing Table — Which Skills To Load
 
@@ -72,6 +74,8 @@ description: Master index for EVM smart contract security audit skills. Load thi
 | Public mempool swaps/mints, slippage-sensitive flows, auction/bidding | `evm-audit-mev` |
 | NFTs, ERC721, ERC1155, metadata, royalties | `evm-audit-erc721` |
 | DoS vectors, gas griefing, unbounded operations | `evm-audit-dos` |
+| Staking/rewards, auctions, keeper-dependent flows, multi-role protocols, incentive design | `evm-audit-game-theory` |
+| **Phase 4 synthesis only** (after all findings written) | `evm-audit-synthesis` |
 
 ## Audit Methodology
 
@@ -83,26 +87,40 @@ description: Master index for EVM smart contract security audit skills. Load thi
 5. Note the target deployment chain(s)
 
 ### Phase 2: Skill Selection
-Load **always-on baseline**: `evm-audit-general` + `evm-audit-precision-math` + `evm-audit-reentrancy` + `evm-audit-access-control`. Then add domain skills from the routing table. For a typical DeFi protocol, expect 7-10 skills total.
+Load **always-on baseline**: `evm-audit-general` + `evm-audit-precision-math` + `evm-audit-reentrancy` + `evm-audit-access-control`. Then add domain skills from the routing table. For a typical DeFi protocol, expect 8-11 skills total. Do **not** load `evm-audit-synthesis` during discovery.
 
 ### Phase 3: Spawn Parallel Sub-Agents
 **Spawn one opus sub-agent per selected skill.** Do not run skills sequentially in the main session — parallel agents produce dramatically better results by keeping each agent's context focused.
 
-Each agent receives:
-- The full contract source
-- Their one checklist (read from `references/checklist.md`)
-- The standard finding format (below)
-- Output path: `audits/<repo>-<date>/findings-<skill>.md`
+Do NOT pass the full contract source to every agent. With 7–10 agents that duplicates the entire codebase into every context and is the single largest token cost of the run. Instead give each agent a scoped context package containing only what its checklist can act on:
+
+- **In-scope source only**: the contract files matching this domain's routing trigger, not the whole repo. A reentrancy agent gets the contracts with external calls/callbacks; an oracle agent gets the price-consuming contracts. Include a shared file only if that agent's checklist actually reaches it.
+- **Recon digest (2–3 lines)**: inheritance/proxy map + target chain(s) from Phase 1, compressed. Not the raw recon dump.
+- **Their one checklist**: read from `references/checklist.md`.
+- **The standard finding format** (below).
+- **Output path**: `audits/<repo>-<date>/findings-<skill>.md`.
+- **Findings file shape** (required): open the output file with a compact header (severity counts + one-line title per finding), then full finding bodies using the standard format below. Headers must exist before bodies — Phase 4 reads headers first and cannot retrofit this shape after agents finish.
+
+This keeps each agent's input to its own domain and cuts total fan-out tokens by the majority versus a full-source dump per agent, with no loss of coverage — an agent never needed the files outside its checklist's reach.
+
+If an agent runs shell commands (tests, greps, compiler output), it must pipe them through filters — summary flags, `tail`, `--tb=short` and equivalents — never dump full verbose logs into its context.
 
 Wait for all agents to complete, then proceed to Phase 4.
 
 ### Phase 4: Synthesis
-Read all `findings-*.md` files. Deduplicate findings that multiple agents flagged. Check for cross-cutting concerns:
-- [ ] Interactions between finding categories (e.g., oracle manipulation + liquidation)
-- [ ] State machine consistency across all state transitions
-- [ ] Economic attack vectors combining multiple findings
-- [ ] MEV-amplified versions of single-tx findings
-Write final `AUDIT-REPORT.md` with all findings ranked by severity.
+**Spawn one synthesis agent** (or run in main session) that loads **`evm-audit-synthesis`** only.
+
+Each `findings-<skill>.md` MUST open with a compact header — severity counts plus a one-line title per finding — before any full finding bodies. Read the headers from all files first. Only open a full finding body when a specific dedup, verify-gates, or cross-cutting check below requires comparing its details. Do not pull every full findings file into context at once; that re-reads finding bodies the synthesis step never compares.
+
+1. Read headers from all `findings-*.md` files; open full bodies only as needed for dedup or gate checks
+2. Deduplicate findings that multiple agents flagged
+3. Run **every** candidate finding through `evm-audit-synthesis/references/verify-gates.md` (13 gates). Reject or downgrade findings that fail
+4. Check cross-cutting concerns:
+   - [ ] Interactions between finding categories (e.g., oracle manipulation + liquidation)
+   - [ ] State machine consistency across all state transitions
+   - [ ] Economic attack vectors combining multiple findings
+   - [ ] MEV-amplified versions of single-tx findings
+5. Write final `AUDIT-REPORT.md` with only gates-passed findings, ranked by severity
 
 ### Phase 5: File Issues (if repo provided)
 Run `gh issue create --repo <owner/repo>` for every finding **Medium severity and above**.
@@ -174,3 +192,7 @@ Every sub-agent and the synthesis step MUST use this exact format. No deviations
 - `[ERC-7484]` — ERC-7484 registry adapter spec
 - `[ERC-7683]` — ERC-7683 cross-chain intents spec + Across implementation
 - `[Flashbots]` — Flashbots research on MEV (sandwich, JIT, builder trust)
+
+### Chain Shield port (added v1.3.0)
+- `[Chain Shield]` — chain-shield/ai-agent-audit (MIT): VERIFY_CHECKLIST.md, threat_models/patterns.rs
+- `[Chain Shield VERIFY_CHECKLIST]` — 13-gate synthesis verification (adapted in evm-audit-synthesis)
